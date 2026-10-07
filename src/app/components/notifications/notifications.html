@@ -1,0 +1,17 @@
+<section class="card" id="notifications">
+  <div class="icon">🔔</div>
+  <div>
+    <h2>Zone de notifications</h2>
+    <p>Vous avez 2 nouvelles notifications.</p>
+    <button (click)="showNotifications()">
+      {{ show() ? 'Masquer les notifications' : 'Afficher les notifications' }}
+      </button>
+@if (show()){
+ 
+      <p class="notification">Une nouvelle conférence est disponible.</p>
+      <p class="notification">Sami vous a envoyé une invitation.</p>
+   
+}
+  </div>
+  <p *ngIf="show()">Merci pour votre attention.</p>
+</section>

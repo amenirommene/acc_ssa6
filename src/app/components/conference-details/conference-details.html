@@ -1,0 +1,54 @@
+<section class="card conference-card" id="conference">
+  <div class="icon">🎤</div>
+
+  <div class="content">
+    <h2>Détail de la conférence</h2>
+
+    @if (estSelectionnee()) {
+      <p class="selected-info">
+        Conférence sélectionnée depuis la liste.
+      </p>
+    }
+
+    <!-- PROSIT 2 : interpolation -->
+    <p><strong>Titre :</strong> {{ titre() }}</p>
+
+    @if (!estSelectionnee()) {
+      <p><strong>Intervenant :</strong> {{ intervenant() }}</p>
+    } @else {
+      <p><strong>Description :</strong> {{ description() }}</p>
+      <p><strong>Lieu :</strong> {{ lieu() }}</p>
+    }
+
+    <p><strong>Date :</strong> {{ dateEvenement() }}</p>
+    <p><strong>Places disponibles :</strong> {{ placesDisponibles() }}</p>
+
+    <div class="form-group">
+      <label for="titre"><strong>Modifier le titre :</strong></label>
+
+      <!-- PROSIT 2 : property binding + event binding -->
+      <input
+        id="titre"
+        type="text"
+        [value]="titre()"
+        (input)="changerTitre($event)"
+        placeholder="Saisir un nouveau titre"
+      />
+    </div>
+
+    <!-- PROSIT 2 : contrôle de flux natif -->
+    @if (placesDisponibles() > 0) {
+      <button (click)="inscrire()">S'inscrire</button>
+    } @else {
+      <p class="complet">Conférence complète</p>
+    }
+
+    @if (message()) {
+      <p class="success">{{ message() }}</p>
+    }
+  </div>
+</section>
+
+
+
+

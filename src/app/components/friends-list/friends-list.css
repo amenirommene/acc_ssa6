@@ -1,0 +1,35 @@
+.card {
+  background: white;
+  border-left: 5px solid #26a269;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
+
+.icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e7f7ef;
+  font-size: 28px;
+}
+
+h2 {
+  margin-top: 0;
+  color: #173b67;
+}
+
+ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}

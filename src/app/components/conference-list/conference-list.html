@@ -1,0 +1,46 @@
+<section class="card list-card" id="conference-list">
+  <div class="section-title">
+    <div class="icon">📅</div>
+    <div>
+      <h2>Liste des conférences à venir</h2>
+      <p>Cliquez sur une conférence pour afficher ses détails.</p>
+    </div>
+  </div>
+      <div class="conference-grid">
+      @for (conference of conferences(); track conference.id) {
+      @if (conference.date >= today) {
+        <article
+          class="conference-item"
+          (click)="choisirConference(conference)"
+        >
+          <!-- Pipe uppercase -->
+          <h3>{{ conference.title | uppercase }}</h3>
+
+          <p>{{ conference.description }}</p>
+
+          <!-- Pipe date -->
+          <p><strong>Date :</strong> {{ conference.date | date:'dd/MM/yyyy' }}</p>
+          <p><strong>Lieu :</strong> {{ conference.place }}</p>
+          <p>
+            <strong>Places restantes :</strong>
+       <!---     {{ placesRestantes(conference) }}   --->
+          </p>
+
+          <!-- Directive ngClass -->
+          <button
+          (click)="reserve(conference)"
+            type="button"
+            class="inscription-btn"
+            [ngClass]="couleurBouton(conference)">
+            S'inscrire
+          </button>
+        </article>
+   } 
+      }
+    </div>
+
+          <!---  [disabled]="placesRestantes(conference) === 0"---->
+  <app-conference-details
+    [conference]="conferenceSelectionnee"
+  ></app-conference-details>
+ </section>

@@ -1,0 +1,22 @@
+.header {
+  background: linear-gradient(135deg, #173b67, #2f6fb4);
+  color: white;
+  text-align: center;
+  padding: 34px 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+
+.header h1 {
+  margin: 4px 0 8px;
+  font-size: 34px;
+}
+
+.header p {
+  margin: 0;
+}
+
+.mini-title {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.85;
+}
