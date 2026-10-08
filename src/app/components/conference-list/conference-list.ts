@@ -3,13 +3,14 @@ import { Conference } from '../../models/conference';
 import { DatePipe, UpperCasePipe, NgClass } from '@angular/common';
 import { ConferenceDetails } from '../conference-details/conference-details';
 import { ConferenceService } from '../../services/conference-service';
+import { RouterLink } from '@angular/router';
 
 
 //méta data de la classe
 @Component({
   selector: 'app-conference-list',
   //imports array of the components/Pipes/Directives used in the template
-  imports: [UpperCasePipe, DatePipe, NgClass, ConferenceDetails], 
+  imports: [RouterLink, UpperCasePipe, DatePipe, NgClass, ConferenceDetails], 
   templateUrl: './conference-list.html',
   styleUrl: './conference-list.css',
 })

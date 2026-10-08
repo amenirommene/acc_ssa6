@@ -28,6 +28,7 @@
 
           <!-- Directive ngClass -->
           <button
+          [routerLink]="['/inscription',conference.id]"
           (click)="reserve(conference)"
             type="button"
             class="inscription-btn"

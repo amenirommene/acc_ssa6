@@ -9,7 +9,7 @@ import { UserProfile } from './components/user-profile/user-profile';
 import { ConferenceList } from './components/conference-list/conference-list';
 @Component({
   selector: 'app-root',
-  imports: [Header, Footer, NavBar, FriendsList, Notifications, UserProfile, ConferenceList],
+  imports: [RouterOutlet, Header, Footer, NavBar, FriendsList, Notifications, UserProfile, ConferenceList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
