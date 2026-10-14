@@ -22,7 +22,7 @@ export const routes: Routes = [
     {path:"admin", component:Admin, loadChildren:()=>import('./admin/admin.routes').then(m=>m.ADMIN_ROUTES)},
       
     
-   // {path:"**", redirectTo:"home", pathMatch:"full"},
+    {path:"**", redirectTo:"home", pathMatch:"full"},
 
   
 ];

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-inscription',
@@ -7,6 +7,8 @@ import { Component, input } from '@angular/core';
   styleUrl: './inscription.css',
 })
 export class Inscription {
-
+  x : string= "tttt";
+  y = signal("bonjour");
+  //id est un signal
   id = input.required<string>();
 }
