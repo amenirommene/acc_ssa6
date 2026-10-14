@@ -1,0 +1,24 @@
+<div class="admin-container">
+      <!-- Barre de navigation (Navbar / Sidebar) -->
+      <header class="admin-header">
+        <h1>Espace Administration</h1>
+        <nav class="admin-nav">
+          <!-- Chemin vide pour le dashboard -->
+          <a 
+            routerLink="./" 
+            routerLinkActive="active" 
+            [routerLinkActiveOptions]="{ exact: true }">
+            Dashboard
+          </a>
+
+          <!-- Sous-routes -->
+          <a routerLink="users" routerLinkActive="active">Utilisateurs</a>
+          <a routerLink="speakers" routerLinkActive="active">Speakers</a>
+          <a routerLink="form-conference" routerLinkActive="active">Ajouter conférence</a>
+        </nav>
+      </header>
+<!-- Zone d'affichage des sous-routes -->
+      <main class="admin-content">
+        <router-outlet />
+      </main>
+    </div>

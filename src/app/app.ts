@@ -7,9 +7,10 @@ import { FriendsList } from './components/friends-list/friends-list';
 import { Notifications } from './components/notifications/notifications';
 import { UserProfile } from './components/user-profile/user-profile';
 import { ConferenceList } from './components/conference-list/conference-list';
+import { Admin } from './admin/admin/admin';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer, NavBar, FriendsList, Notifications, UserProfile, ConferenceList],
+  imports: [RouterOutlet, Header, Footer, NavBar, FriendsList, Notifications, UserProfile, ConferenceList, Admin],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
