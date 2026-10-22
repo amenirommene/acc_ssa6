@@ -3,12 +3,12 @@
     <div class="form-group">
         <label for="title">Titre :</label>
         <input id="title" formControlName="title"  class="form-control">
-        @if(myForm.get('title')?.hasError('required') && myForm.get('title')?.touched){
+        @if(Title?.hasError('required') && Title?.touched){
         <div>Champ obligatoire</div>
         }
-         @if(myForm.get('title')?.hasError('minlength') && myForm.get('title')?.touched){
-        <div>Minimum {{ myForm.get('title')?.errors?.['minlength']?.requiredLength}} caractères
-            tu as écris : {{ myForm.get('title')?.errors?.['minlength']?.actualLength}}
+         @if(Title?.hasError('minlength') && Title?.touched){
+        <div>Minimum {{ Title?.errors?.['minlength']?.requiredLength}} caractères
+            tu as écris : {{ Title?.errors?.['minlength']?.actualLength}}
         </div>
         }
         </div>
@@ -16,8 +16,11 @@
     <div class="form-group">
         <label for="description">Description :</label>
         <input id="description" formControlName="description" class="form-control">
+        @if(myForm.get('description')?.invalid){
+        <div>Champ obligatoire</div>
+        }
+    </div>
         
-           </div>
 
     <div class="form-group">
         <label for="place">Lieu :</label>
@@ -33,4 +36,6 @@
         <label for="nbMax">Nombre maximal de participants :</label>
         <input id="nbMax" type="number" formControlName="nbmax"  class="form-control">
     </div>
+    <button type="submit" [disabled]="myForm.invalid">Ajouter</button>
+    <button type="submit" [disabled]="formStatus() == 'INVALID'">Ajouter</button>
 </form>
